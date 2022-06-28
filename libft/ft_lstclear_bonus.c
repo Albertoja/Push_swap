@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:21:40 by aespinos          #+#    #+#             */
-/*   Updated: 2022/04/26 16:34:35 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:08:21 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	ft_lstclear(t_list **lst)
 
 	if (!*lst)
 		return ;
-	temp = *lst;
-	*lst = NULL;
-	while (temp)
+	while (*lst)
 	{
-		free(temp);
-		temp = temp->next;
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
 	}
+	*lst = NULL;
 }

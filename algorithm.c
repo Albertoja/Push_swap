@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:11:45 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/23 17:50:35 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/06/28 19:19:35 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_elcomeback(t_list **stack_a, t_list **stack_b)
 			if (boton == 1)
 				ft_swap(stack_a, 'a');
 			boton = 0;
-		}		
+		}
 	}
 }
 
@@ -74,14 +74,12 @@ void	ft_order(t_list **stack_a, t_list **stack_b)
 {
 	int	stack_num;
 	int	size;
-	int	stack_aux;
 
 	size = ft_lstsize(*stack_a);
 	if (ft_lstsize(*stack_a) < 300)
 		stack_num = 30;
 	else
 		stack_num = 60;
-	stack_aux = stack_num / 2;
 	ft_search_stack(stack_a, stack_b, stack_num, size);
 	while (ft_lstsize(*stack_a) > 3 && check_list_order(*stack_a) == 1)
 	{
@@ -93,4 +91,5 @@ void	ft_order(t_list **stack_a, t_list **stack_b)
 	if (ft_lstsize(*stack_a) == 3)
 		ft_size_3(stack_a);
 	ft_elcomeback(stack_a, stack_b);
+	exit (0);
 }

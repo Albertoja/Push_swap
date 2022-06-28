@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:27:03 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/27 20:32:23 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:06:43 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@
 # include <limits.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include "libft/libft.h"
 
-typedef struct s_list
-{
-	int				content;
-	struct s_list	*next;
-}	t_list;
 void	ft_swap(t_list **stack, char a);
 void	ft_push(t_list **desde, t_list **hasta, char a);
 void	ft_rotate(t_list **stack, char a);
