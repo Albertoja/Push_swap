@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:30:04 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/23 16:59:50 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:36:49 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,12 +94,7 @@ void	ft_size_4(t_list **stack_a, t_list **stack_b)
 void	ft_size_5(t_list **stack_a, t_list **stack_b)
 {
 	while (ft_min(*stack_a) != (*stack_a))
-	{
-		if (ft_min(*stack_a) <= (*stack_a)->next->next)
-			ft_rotate(stack_a, 'a');
-		else
-			ft_revrotate(stack_a, 'a');
-	}
+		ft_rotate(stack_a, 'a');
 	if (check_list_order(*stack_a) != 0)
 	{
 		ft_push(stack_a, stack_b, 'b');

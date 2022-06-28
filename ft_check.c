@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:20:06 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/27 20:37:33 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:27:55 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	check_list_order(t_list *stack)
 		stack = stack->next;
 	}
 	if (comp + 1 == ft_lstsize(stack))
-		exit(0);
+		return (0);
 	return (1);
 }
 
