@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 17:00:27 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/28 19:32:12 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:53:29 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,6 @@ t_list	*ft_trasform_num(t_list *stack)
 		newlist = head;
 		min = next_min(stack, min);
 	}
+	ft_lstclear(&stack);
 	return (head);
 }

@@ -8,7 +8,7 @@ echo "realizando pruebas..."
 for i in $(seq $TOTAL)
 do
 	ARG=$(ruby -e "puts (1..$lenlist).to_a.shuffle.join(' ')")
-	#echo $ARG
+	echo $ARG
 	ret=$(./push_swap $ARG | wc -l)
 	ret2=$(./push_swap $ARG | ./checker_Mac $ARG )
 	var=$(($ret + $var))

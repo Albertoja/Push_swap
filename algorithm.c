@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:11:45 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/28 19:19:35 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/04 17:30:57 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,4 @@ void	ft_order(t_list **stack_a, t_list **stack_b)
 	if (ft_lstsize(*stack_a) == 3)
 		ft_size_3(stack_a);
 	ft_elcomeback(stack_a, stack_b);
-	exit (0);
 }

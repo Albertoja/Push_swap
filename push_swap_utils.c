@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 18:41:45 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/28 19:57:46 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/06/28 20:39:10 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,20 +59,6 @@ t_list	*next_min(t_list *stack, t_list *pre_min)
 	return (min);
 }
 
-// void	ft_lstclear(t_list **lst)
-// {
-// 	t_list	*temp;
-
-// 	if (!*lst)
-// 		return ;
-// 	while (*lst)
-// 	{
-// 		temp = (*lst)->next;
-// 		free(lst);
-// 		*lst = temp;
-// 	}
-// 	*lst = NULL;
-// }
 
 int	ft_search_less(t_list *stack, int num)
 {
