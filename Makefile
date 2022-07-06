@@ -8,7 +8,7 @@ LIBFT_PATH = ./libft/
 
 CC = gcc
 
-CFLAGS = -g -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra #-g3 -fsanitize=address
 
 RM = rm -f
 

@@ -59,21 +59,6 @@ t_list	*next_min(t_list *stack, t_list *pre_min)
 	return (min);
 }
 
-void	ft_lstclear(t_list **lst)
-{
-	t_list	*temp;
-
-	if (!*lst)
-		return ;
-	temp = *lst;
-	*lst = NULL;
-	while (temp)
-	{
-		free(temp);
-		temp = temp->next;
-	}
-}
-
 int	ft_search_less(t_list *stack, int num)
 {
 	int	cont_01;
