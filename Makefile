@@ -1,38 +1,36 @@
 SRCS	= main.c push_swap_utils.c push_swap_utils2.c movimientos.c sort_undo_five.c ft_check.c algorithm.c trasform_numbers.c ft_create_lst.c basic_utils.c
 
-OBJS	= ${SRCS:.c=.o}
+OBJS = $(SRCS:.c=.o)
 
-NAME	= push_swap
+NAME = push_swap
 
-CC	= gcc
+LIBFT_PATH = ./libft/
 
-RM	= rm -f
+CC = gcc
 
-CFLAGS	= -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS = -g -Wall -Werror -Wextra
 
-LIBFT = libft/libft.a
+RM = rm -f
 
-PATHLIB = libft/
+all: $(NAME)
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o:%.c
+	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I$(LIBFT_PATH)
 
-${NAME}:	${LIBFT} ${OBJS}
-				${CC} ${CFLAGS} ${LIBFT} ${OBJS} -o ${NAME}
-
-${LIBFT}:
-			@make -C ${PATHLIB}
-
-all:		${NAME}
+$(NAME): $(OBJS)
+	@$(MAKE) -C $(LIBFT_PATH) --silent
+	@$(CC) -o $(NAME) $? -I$(LIBFT_PATH) -L$(LIBFT_PATH) -lft
+	@echo $(NAME)": ready to be executed"
 
 clean:
-				@make clean -C ${PATHLIB}
-				${RM} ${OBJS} ${OBJB}
+	@$(RM) $(OBJS)
+	@$(MAKE) -C $(LIBFT_PATH) clean --silent
 
-fclean: 	clean
-				@make fclean -C ${PATHLIB}
-				${RM} ${NAME}
+fclean: clean
+	@$(RM) $(NAME)
+	@$(MAKE) -C $(LIBFT_PATH) fclean --silent
 
-re: 		fclean all
+re: fclean $(NAME)
+	@$(MAKE) -C $(LIBFT_PATH) clean --silent
 
-.PHONY:		all clean fclean re
+.PHONY: all clean fclean re

@@ -120,3 +120,4 @@ void	ft_sort_undo_five(t_list *stack_a, t_list *stack_b)
 	else if (ft_lstsize(stack_a) == 5)
 		ft_size_5(&stack_a, &stack_b);
 }
+

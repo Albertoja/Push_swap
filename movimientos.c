@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:24:51 by aespinos          #+#    #+#             */
-/*   Updated: 2022/07/04 17:07:26 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/05 18:16:24 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,17 @@
 void	ft_swap(t_list **stack, char a)
 {
 	t_list	*temp;
-	t_list	*temp2;
 
-	temp = *stack;
-	temp = temp->next;
-	temp2 = temp;
-	temp2 = temp2->next;
-	(*stack)->next = temp2;
-	temp->next = *stack;
-	*stack = temp;
+	temp = (*stack)->next->next;
+	(*stack)->next->next = *stack;
+	(*stack) = (*stack)->next;
+	(*stack)->next->next = temp;
 	if (a != 'x')
 	{
 		write(1, "s", 1);
 		write(1, &a, 1);
 		write(1, "\n", 1);
 	}
-	free(temp);
 }
 
 void	ft_push(t_list **desde, t_list **hasta, char a)
@@ -84,7 +79,6 @@ void	ft_revrotate(t_list **stack, char a)
 		write(1, &a, 1);
 		write(1, "\n", 1);
 	}
-	free(temp_01);
 }
 
 void	ft_rotate_two(t_list **stack_a, t_list **stack_b)

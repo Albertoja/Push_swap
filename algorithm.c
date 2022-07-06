@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:11:45 by aespinos          #+#    #+#             */
-/*   Updated: 2022/07/04 17:30:57 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/06/23 17:50:35 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_elcomeback(t_list **stack_a, t_list **stack_b)
 			if (boton == 1)
 				ft_swap(stack_a, 'a');
 			boton = 0;
-		}
+		}		
 	}
 }
 
