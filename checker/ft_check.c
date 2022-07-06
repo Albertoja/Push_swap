@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:20:06 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/28 15:44:49 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/06 19:46:17 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_num_same(t_list *stack_a)
 		{
 			if (aux_01->content == aux_02->content)
 			{
-				write(2, "Error: same number\n", 19);
+				write(2, "Error\n", 6);
 				exit(0);
 			}
 			aux_02 = aux_02->next;
@@ -51,9 +51,7 @@ int	check_list_order(t_list *stack)
 		stack = stack->next;
 	}
 	if (comp + 1 == ft_lstsize(stack))
-	{
 		return (0);
-	}
 	return (1);
 }
 
@@ -71,23 +69,13 @@ void	ft_check_letters(char **numbers)
 			if (ft_strlen(numbers[i]) > 11 || ft_isnumber(numbers[i]) == 0)
 			{
 				ft_free(numbers);
+				write(2, "Error\n", 6);
 				exit(0);
 			}
 			j++;
 		}
 		i++;
 	}
-}
-
-int	ft_check_list(t_list *stack_a)
-{
-	if (!stack_a)
-		exit(0);
-	if (ft_num_same(stack_a) != 0)
-		return (1);
-	else if (check_list_order(stack_a) != 0)
-		return (1);
-	return (0);
 }
 
 int	ft_atoi_check(const char *str, char **numbers)
@@ -112,8 +100,20 @@ int	ft_atoi_check(const char *str, char **numbers)
 	if (ans * sign > 2147483647 || ans * sign < -2147483648)
 	{
 		ft_free(numbers);
-		write(2, "Error: int num\n", 15);
+		write(2, "Error\n", 6);
 		exit(0);
 	}
 	return ((int)(ans * sign));
+}
+
+int	ft_check_list(t_list *stack_a)
+{
+	if (!stack_a)
+		exit(0);
+	if (ft_num_same(stack_a) != 0)
+		return (1);
+	else if (check_list_order(stack_a) != 0)
+		return (1);
+	write(2, "Error\n", 6);
+	exit(0);
 }

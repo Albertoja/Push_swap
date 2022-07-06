@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 18:06:11 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/28 15:54:06 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/06 19:46:40 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,20 +100,19 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	ft_create_lst(&check_a, argc, argv);
+	check_a = ft_trasform_num(check_a);
 	if (check_list_order(check_a) == 0)
 	{
 		write(1, "OK\n", 3);
 		exit(0);
 	}
-	if (ft_check_list(check_a) == 0)
-	{
-		write(2, "Error\n", 6);
-		exit(0);
-	}
+	ft_check_list(check_a);
 	ft_gnl_check(&check_a, &check_b);
 	if (check_list_order(check_a) == 1)
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);
+	ft_lstclear(&check_a);
+	ft_lstclear(&check_b);
 	exit(0);
 }
