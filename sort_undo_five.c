@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:30:04 by aespinos          #+#    #+#             */
-/*   Updated: 2022/07/06 19:37:43 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/11 18:55:42 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,17 +76,17 @@ void	ft_size_5(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-void	ft_sort_undo_five(t_list *stack_a, t_list *stack_b)
+void	ft_sort_undo_five(t_list **stack_a, t_list **stack_b)
 {
-	if (ft_lstsize(stack_a) == 2)
+	if (ft_lstsize(*stack_a) == 2)
 	{
-		if ((stack_a->content) > (stack_a->next->content))
-			ft_swap(&stack_a, 'a');
+		if (((*stack_a)->content) > ((*stack_a)->next->content))
+			ft_swap(stack_a, 'a');
 	}
-	else if (ft_lstsize(stack_a) == 3)
-		ft_size_3(&stack_a);
-	else if (ft_lstsize(stack_a) == 4)
-		ft_size_4(&stack_a, &stack_b);
-	else if (ft_lstsize(stack_a) == 5)
-		ft_size_5(&stack_a, &stack_b);
+	else if (ft_lstsize(*stack_a) == 3)
+		ft_size_3(stack_a);
+	else if (ft_lstsize(*stack_a) == 4)
+		ft_size_4(stack_a, stack_b);
+	else if (ft_lstsize(*stack_a) == 5)
+		ft_size_5(stack_a, stack_b);
 }

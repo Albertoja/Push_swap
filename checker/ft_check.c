@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:20:06 by aespinos          #+#    #+#             */
-/*   Updated: 2022/07/06 19:46:17 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/11 19:10:22 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,21 @@
 
 int	ft_num_same(t_list *stack_a)
 {
-	t_list	*aux_01;
-	t_list	*aux_02;
+	t_list	*aux;
 
-	aux_01 = stack_a;
-	aux_02 = stack_a->next;
-	while (aux_01 && aux_02)
+	while (stack_a)
 	{
-		while (aux_02)
+		aux = stack_a->next;
+		while (aux)
 		{
-			if (aux_01->content == aux_02->content)
+			if (stack_a->content == aux->content)
 			{
 				write(2, "Error\n", 6);
 				exit(0);
 			}
-			aux_02 = aux_02->next;
+			aux = aux->next;
 		}
-		aux_02 = aux_01->next->next;
-		aux_01 = aux_01->next;
+		stack_a = stack_a->next;
 	}
 	return (0);
 }

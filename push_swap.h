@@ -6,7 +6,7 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:27:03 by aespinos          #+#    #+#             */
-/*   Updated: 2022/06/27 20:32:23 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/11 18:56:13 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
-void	ft_sort_undo_five(t_list *stack_a, t_list *stack_b);
+void	ft_sort_undo_five(t_list **stack_a, t_list **stack_b);
 t_list	*ft_min(t_list *stack);
 t_list	*ft_max(t_list *stack);
 int		check_list_order(t_list *stack);
