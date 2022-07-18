@@ -6,18 +6,22 @@
 /*   By: aespinos <aespinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 19:23:18 by aespinos          #+#    #+#             */
-/*   Updated: 2022/07/11 18:58:21 by aespinos         ###   ########.fr       */
+/*   Updated: 2022/07/18 16:40:47 by aespinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
+void	leaks(void)
+{
+	system("leaks push_swap");
+}
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 
+	atexit(leaks);
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc <= 1)
